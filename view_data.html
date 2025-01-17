@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Family Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin - View Family Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ward Name</th>
+                <th>Head of Family Name</th>
+                <th>Your Name</th>
+                <th>Relationship</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+    </table>
+    <button onclick="window.location.href='index.html'">Go to Home</button>
+
+    <script>
+        var familyData = JSON.parse(localStorage.getItem('familyData')) || [];
+
+        var dataBody = document.getElementById('dataBody');
+        familyData.forEach(function(member) {
+            var row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${member.ward_name}</td>
+                <td>${member.head_name}</td>
+                <td>${member.name}</td>
+                <td>${member.relationship}</td>
