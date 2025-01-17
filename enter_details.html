@@ -23,6 +23,8 @@
         }
 
         form {
+            margin-top: 100px;
+            
             background-color: white;
             border-radius: 8px;
             padding: 20px;
@@ -75,7 +77,10 @@
 </head>
 <body>
     <h1>Enter Family Member Details</h1>
+    
     <form id="detailsForm">
+      
+<div style="margin-top: 250px;">
         <input type="text" id="ward_name" placeholder="Enter Ward Name" required><br>
         <input type="text" id="head_name" placeholder="Enter Head of Family Name" required><br>
         <input type="text" id="name" placeholder="Enter Your Name" required><br>
@@ -103,13 +108,13 @@
 
         <label for="marriage_date">Enter Date of Marriage (Optional)</label>
         <input type="date" id="marriage_date"><br><br>
-
         <textarea id="remarks" placeholder="Enter Remarks"></textarea><br>
 
         <input type="file" id="photo" required><br>
 
         <button type="submit">Submit</button>
     </form>
+</div>
 
     <div class="buttons-container">
         <button onclick="window.location.href='index.html'">Go to Home</button>
